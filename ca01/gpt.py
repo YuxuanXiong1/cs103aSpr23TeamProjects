@@ -58,6 +58,20 @@ class GPT():
 
         response = completion.choices[0].text
         return response
+    
+    def getNumPrime(self,number):
+        ''' Find the number of primes inside the input range '''
+        completion = openai.Completion.create(
+            engine=self.model_engine,
+            prompt="How many prime number in range" + number,
+            max_tokens=1024,
+            n=1,
+            stop=None,
+            temperature=0.8,
+        )
+
+        response = completion.choices[0].text
+        return response
 
 if __name__=='__main__':
     '''
