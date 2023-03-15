@@ -42,7 +42,7 @@ def index():
         <h1>GPT Demo</h1>
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
         <h1>Get The Number of Prime</h1>
-        <a href="{url_for('Get_Prime')}">Use gpt to find the number of Prime in a certain range</a>
+        <a href="{url_for('getPrime')}">Use gpt to find the number of Prime in a certain range</a>
     '''
 
 @app.route('/gptdemo', methods=['GET', 'POST'])
