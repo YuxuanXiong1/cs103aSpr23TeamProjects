@@ -37,8 +37,8 @@ def index():
         <a href="{url_for('about')}">An about page which explains what your program does</a>
         <h1>Team Page</h1>
         <a href="{url_for('team')}">A team page which has a short bio of each member of the team and what their role was</a>
-        <h1>GPT Demo</h1>
-        <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
+        <h1>Calculate Formula</h1>
+        <a href="{url_for('formula')}">Use GPT to calculate a formula</a>
         <h1>GPT Demo</h1>
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
     '''
@@ -89,6 +89,32 @@ def about():
     Yuxuan Xiong: CS major; leader of the team
     Zone Zhang: CS major; member of the team
     '''
+
+@app.route('/formula', methods=['GET', 'POST'])
+def formula():
+    ''' reads the formula and use GPT to calculate it '''
+    if request.method == 'POST':
+        formula = request.form['prompt']
+        result = gptAPI.calculateFormula(formula)
+        return f'''
+        <h1>GPT Demo</h1>
+        <pre style="bgcolor:yellow">{formula}</pre>
+        <hr>
+        Here is the result in text mode:
+        <div style="border:thin solid black">{result}</div>
+        Here is the result in "pre" mode:
+        <pre style="border:thin solid black">{result}</pre>
+        <a href={url_for('gptdemo')}> make another query</a>
+        '''
+    else:
+        return '''
+        <h1>GPT Demo App</h1>
+        Enter your query below
+        <form method="post">
+            <textarea name="prompt"></textarea>
+            <p><input type=submit value="get response">
+        </form>
+        '''
 
 if __name__=='__main__':
     # run the code on port 5001, MacOS uses port 5000 for its own service :(
