@@ -66,6 +66,25 @@ def gptdemo():
         </form>
         '''
 
+@app.route('/about')
+def about():
+    ''' explains what your program does '''
+    return '''
+    <h1>About Page</h1>
+    This program could read formulas from the user and calculate the result.
+    It can also read a number from the user and show how many prime numbers
+    are there within that number.
+    '''
+
+@app.route('/team')
+def about():
+    ''' has a short bio of each member of the team and what their role was '''
+    return '''
+    <h1>Team Page</h1>
+    Yuxuan Xiong: CS major; leader of the team
+    Zone Zhang: CS major; member of the team
+    '''
+
 if __name__=='__main__':
     # run the code on port 5001, MacOS uses port 5000 for its own service :(
     app.run(debug=True,port=5001)
