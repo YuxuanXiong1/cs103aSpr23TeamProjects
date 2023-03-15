@@ -82,7 +82,7 @@ def about():
     '''
 
 @app.route('/team')
-def about():
+def team():
     ''' has a short bio of each member of the team and what their role was '''
     return '''
     <h1>Team Page</h1>
