@@ -37,12 +37,8 @@ def index():
         <a href="{url_for('about')}">An about page which explains what your program does</a>
         <h1>Team Page</h1>
         <a href="{url_for('team')}">A team page which has a short bio of each member of the team and what their role was</a>
-        <h1>Calculate Formula</h1>
-        <a href="{url_for('formula')}">Use GPT to calculate a formula</a>
-        <h1>GPT Demo</h1>
-        <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
-        <h1>Get The Number of Prime</h1>
-        <a href="{url_for('getPrime')}">Use gpt to find the number of Prime in a certain range</a>
+        <h1>Form Page</h1>
+        <a href="{url_for('form')}">A form page for each team member which ask the user for some input, then calls the appropriate GPT method to get the response, which it sends back to the browser.</a>
     '''
 
 @app.route('/gptdemo', methods=['GET', 'POST'])
@@ -90,6 +86,16 @@ def team():
     <h1>Team Page</h1>
     Yuxuan Xiong: CS major; leader of the team
     Zone Zhang: CS major; member of the team
+    '''
+
+@app.route('/form')
+def form():
+    ''' links to each team member's methods '''
+    return f'''
+    <h1>Zone Zhang - Calculate Formula</h1>
+    <a href="{url_for('formula')}">Use GPT to calculate a formula</a>
+    <h1>Yuxuan Xiong - Get The Number of Prime</h1>
+    <a href="{url_for('getPrime')}">Use gpt to find the number of Prime in a certain range</a>
     '''
 
 @app.route('/formula', methods=['GET', 'POST'])
