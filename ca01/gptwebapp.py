@@ -117,7 +117,7 @@ def formula():
     else:
         return '''
         <h1>GPT Demo App</h1>
-        Enter your query below
+        Please enter a fomular, we will calculate the result for you!
         <form method="post">
             <textarea name="prompt"></textarea>
             <p><input type=submit value="get response">
@@ -145,7 +145,7 @@ def getPrime():
     else:
         return '''
         <h1>Get The Number of Prime in Ceartain Range</h1>
-        Enter your query below
+        Please enter a number, we will help you find how many prime number inside this range
         <form method="post">
             <textarea name="prompt"></textarea>
             <p><input type=submit value="get response">
