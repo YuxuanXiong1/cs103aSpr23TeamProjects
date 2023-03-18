@@ -49,7 +49,7 @@ class GPT():
         ''' Calculate the formula '''
         completion = openai.Completion.create(
             engine=self.model_engine,
-            prompt="Calculate this formula:" + formula,
+            prompt="What is the result of " + formula,
             max_tokens=1024,
             n=1,
             stop=None,

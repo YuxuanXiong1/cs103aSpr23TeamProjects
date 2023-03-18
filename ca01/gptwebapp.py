@@ -112,7 +112,7 @@ def formula():
         <div style="border:thin solid black">{result}</div>
         Here is the result in "pre" mode:
         <pre style="border:thin solid black">{result}</pre>
-        <a href={url_for('gptdemo')}> getPrime query</a>
+        <a href={url_for('formula')}> Do you want to find the result of another fomula?</a>
         '''
     else:
         return '''
