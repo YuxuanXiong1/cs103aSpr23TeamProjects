@@ -112,11 +112,11 @@ def formula():
         <div style="border:thin solid black">{result}</div>
         Here is the result in "pre" mode:
         <pre style="border:thin solid black">{result}</pre>
-        <a href={url_for('gptdemo')}> make another query</a>
+        <a href={url_for('gptdemo')}> getPrime query</a>
         '''
     else:
         return '''
-        <h1>GPT Demo App</h1>
+        <h1>Calculate Formula</h1>
         Please enter a fomular, we will calculate the result for you!
         <form method="post">
             <textarea name="prompt"></textarea>
@@ -140,7 +140,7 @@ def getPrime():
         <div style="border:thin solid black">{answer}</div>
         Here is the answer in "pre" mode:
         <pre style="border:thin solid black">{answer}</pre>
-        <a href={url_for('gptdemo')}> make another query</a>
+        <a href={url_for('getPrime')}> make another query</a>
         '''
     else:
         return '''
