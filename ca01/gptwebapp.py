@@ -117,7 +117,7 @@ def formula():
     else:
         return '''
         <h1>Calculate Formula</h1>
-        Please enter a fomular, we will calculate the result for you!
+        Please enter a formula, we will calculate the result for you!
         <form method="post">
             <textarea name="prompt"></textarea>
             <p><input type=submit value="get response">
